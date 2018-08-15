@@ -243,3 +243,75 @@ var months = ['Jan', 'March', 'April', 'June', 'July', 'August', 'Sep'];
 months.splice(4, 2, 'May', 'Feb');
 console.log(months);
 //[ 'Jan', 'March', 'April', 'June', 'May', 'Sep' ]
+
+var Person4 = require('./person')
+function sayHi(){
+    console.log('hi');
+}
+var Person = {
+    first_name: 'Kenneth',
+    last_name: 'Phang',
+    age: 20,
+    func1: sayHi
+}
+
+var p = Person;
+console.log(Person);
+Person.salary = 2000;
+console.log(Person);
+delete Person.age;
+console.log(Person);
+var xFunc = Person.func1;
+xFunc();
+function Person2(firstName, lastName, age){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+}
+
+function Person3(firstName, lastName, age){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+}
+
+
+var p2 = new Person2('Kenneth', 'Phang', 30);
+var p4 = new Person4('Kenneth', 'Phang', 30);
+
+console.log(p2 instanceof Person4);
+console.log(p4 instanceof Person4);
+console.log(p4.getFirstName());
+
+
+class Animal {
+    constructor(name, age, noOfLegs){
+        this.name = name;
+        this.age = age;
+        this.noOfLegs = noOfLegs;
+    }
+
+    getLegs(){
+        return this.noOfLegs;
+    }
+}
+
+class Cat extends Animal{
+    constructor(name, age, noOfLegs){
+        super(name, age, noOfLegs);
+    }
+
+    getLegs(){
+        return 5;
+    }
+
+    getName(){
+        return this.name;
+    }
+}
+
+var a = new Animal('Hello Kitty', 2, 4);
+console.log(a);
+var c = new Cat('Doreamon', 2, 4)
+console.log(c.getLegs());
+console.log(c.getName());
