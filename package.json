@@ -1,0 +1,14 @@
+{
+  "name": "sa-fsf-day01",
+  "version": "1.0.0",
+  "description": "this node js day1",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kenneth Phang",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
